@@ -1,0 +1,44 @@
+<head></head>
+<body>
+  <div>
+    <button onclick="proxy()">test proxy</button>
+  </div>
+</body>
+
+<script>
+  console.log('hello world');
+
+  const headers = new Headers();
+  headers.append('Content-Type', 'application/json');
+
+  const requestOptions = {
+    method: 'GET',
+    headers: headers,
+  };
+
+  async function proxy() {
+    console.log('-------hit--------');
+
+    const url2 = 'https://test-youtubee.myshopify.com/';
+
+    const url = 'https://know-greatest-intranet-consultants.trycloudflare.com';
+
+    try {
+      const response = await fetch(`${url}/app/proxy`, requestOptions);
+
+      if (!response.ok) new Error('something when wrong');
+
+      console.log(response);
+      console.log(response.data);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+</script>
+
+{% schema %}
+{
+  "name": "buttons",
+  "target": "section"
+}
+{% endschema %}
